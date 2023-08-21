@@ -286,3 +286,54 @@
 }
 
 /* ! Fin Catalogo Productos */
+
+/* ! CARRITO */
+
+/* color del card total */
+.bg-color {
+    background-color: rgba(128, 128, 128, 0.393);
+    border-radius: 15px;
+}
+
+.card.cart {
+    border-radius: 45px;
+}
+
+/* titulo productos */
+.card.cart h1 {
+    font-weight: 600;
+    font-size: 35px;
+}
+
+/* redondeo imagen */
+.card.cart img {
+    border-radius: 20px;
+}
+
+.form-select.cart {
+    width: 75px;
+}
+
+.bi.bi-trash3 {
+    font-size: 22px;
+}
+
+.card.cart h5 {
+    color: black;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.btn.btn-outline-secondary {
+    border-color: black;
+    background-color: black;
+    color: white;
+    font-weight: 500;
+}
+
+.btn.btn-outline-secondary:hover {
+    background-color: #EB6440;
+    color: whitesmoke;
+}
+
+/* ! FIN CARRITO */
