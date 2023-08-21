@@ -8,8 +8,9 @@
 }
 
 /*! Navbar !! LISTO*/
-.icono {
-    margin-right: 35px;
+
+.navbar img {
+    margin-right: 50px;
 }
 
 /* BOTON BUSCAR */
@@ -61,6 +62,10 @@
 
 .nav-link:hover {
     color: #EB6440;
+}
+
+.container-fluid.nav {
+    background-color: #c2bbbb54;
 }
 
 /* !Fin Navbar */
@@ -190,6 +195,7 @@ h2::before {
 .lineas h2:hover::after {
     translate: 20px;
 }
+
 /* !Fin Lineas */
 
 /* ! Cards Destacados !! LISTO */
@@ -204,16 +210,17 @@ h2::before {
     height: 250px;
 }
 
-.card.destacadas img{
+.card.destacadas img {
     border-radius: 18px 18px;
     background-color: #6d6d6d42;
 }
+
 /* HOVER CARD */
 .destacadas.wh:hover {
     transform: scale(1.05);
 }
 
-.card.destacadas h5{
+.card.destacadas h5 {
     color: black;
     font-weight: 400;
     font-size: 16px;
