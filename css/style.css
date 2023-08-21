@@ -155,7 +155,7 @@
     position: relative;
     /* mueve las lineas con respecto al texto */
     display: inline-block;
-    color: rgba(122, 121, 121, 0.622);
+    color: #eb654077;
 }
 
 .lineas h2::after,
@@ -165,7 +165,7 @@ h2::before {
     position: absolute;
     top: 50%;
     /* posicion de ubicacion de la linea */
-    border-bottom: 3px solid rgba(122, 121, 121, 0.622);
+    border-bottom: 3px solid #eb65403c;
     width: 18em;
     /* tamaño de la linea */
     height: 3px;
@@ -191,3 +191,32 @@ h2::before {
     translate: 20px;
 }
 /* !Fin Lineas */
+
+/* ! Cards Destacados !! LISTO */
+/* SOMBRA CARDS */
+.destacadas {
+    border-radius: 18px 18px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.237), 0 0px 6px rgba(82, 51, 4, 0.319);
+}
+
+/* ALTURA CARD 1 */
+.card-img.card-1-dest {
+    height: 250px;
+}
+
+.card.destacadas img{
+    border-radius: 18px 18px;
+    background-color: #6d6d6d42;
+}
+/* HOVER CARD */
+.destacadas.wh:hover {
+    transform: scale(1.05);
+}
+
+.card.destacadas h5{
+    color: black;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+/* ! Fin de Cards Destacados */
