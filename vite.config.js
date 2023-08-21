@@ -1,3 +1,4 @@
+
 import{resolve} from 'node:path'
 //colsole.log(resolve('pages'))
 
@@ -7,6 +8,9 @@ export default{
     },
     css:{
         devSourcemap:true,
+    },
+    build:{
+        emptyOutDir:true,
         rollupOptions:{
             input:{
                 smartphones:resolve('pages/smartphones.html'),
