@@ -17,7 +17,7 @@ export default{
                 index:resolve('index.html'),
                 accesorios:resolve('pages/accesorios.html'),
                 computacion:resolve('pages/computacion.html'),
-                carrito:resolve('pages/carrito')
+                carrito:resolve('pages/carrito.html')
             }
         }
     }
