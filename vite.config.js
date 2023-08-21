@@ -16,7 +16,8 @@ export default{
                 smartphones:resolve('pages/smartphones.html'),
                 index:resolve('index.html'),
                 accesorios:resolve('pages/accesorios.html'),
-                computacion:resolve('pages/computacion.html')
+                computacion:resolve('pages/computacion.html'),
+                carrito:resolve('pages/carrito')
             }
         }
     }
