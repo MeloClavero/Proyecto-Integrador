@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,500;1,400&display=swap');
+
+
+/* COLOR BODY */
+.body {
+    background-color: #f5f5f5d1;
+    font-family: 'Roboto', sans-serif;
+}
+
+/*! Navbar !! LISTO*/
+.icono {
+    margin-right: 35px;
+}
+
+/* BOTON BUSCAR */
+.btn.btn-outline-success {
+    border-color: #EB6440;
+    color: #EB6440;
+    border-radius: 10px 10px;
+}
+
+/* HOVER BOTON BUSCAR */
+.btn.btn-outline-success:hover {
+    background-color: #EB6440;
+    color: whitesmoke;
+}
+
+/* BORDE BOTON QUE ESTAS BUSCANDO */
+.form-control {
+    border-radius: 10px;
+    text-align: center;
+    border-color: #EB6440;
+}
+
+/*  SOMBRA INPUT BTN BUSCAR */
+.form-control:focus {
+    box-shadow: 1px 1px 8px #EB6440;
+    outline: 0 none;
+}
+
+/* TAMAÑO DEL CARRITO */
+.bi-cart4 {
+    font-size: 25px;
+    margin-left: 25px;
+    color: black;
+}
+
+.bi-cart4:hover {
+    color: maroon;
+}
+
+/* TEXTO Y COLOR NAVBAR */
+.navbar {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+}
+
+.nav-link {
+    color: black;
+}
+
+.nav-link:hover {
+    color: #EB6440;
+}
+/* !Fin Navbar */
+
+/* ! Footer !! LISTO */
+/* COLOR FOOTER */
+.footer {
+    background-image: linear-gradient(to bottom, #f5f5f5d1 0%, #eb6540d5 300%);
+}
+
+/* INPUT MAIL */
+.me-2.mail:focus {
+    box-shadow: none;
+    border-color: #EB6440;
+}
+
+/* BOTON SUSCRIBIRME */
+.btn-outline-success.suscrip {
+    color: black;
+    font-weight: 500;
+}
+
+/*  LOGOS: TW,FB,IG */
+.bi-twitter,
+.bi-instagram,
+.bi-facebook {
+    font-size: 22px;
+    color: black;
+}
+
+.bi-twitter:hover,
+.bi-instagram:hover,
+.bi-facebook:hover {
+    color: blue;
+    transition: 0.2s;
+}
+
+/* DE LINKS */
+.border-navs {
+    border-bottom: 1px solid #908d8d88;
+}
+
+/* linea baja */
+.border-n {
+    border-top: 1px solid #908d8d88;
+}
+
+/* ! Fin Footer */
