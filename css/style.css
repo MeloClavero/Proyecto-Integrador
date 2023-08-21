@@ -62,6 +62,7 @@
 .nav-link:hover {
     color: #EB6440;
 }
+
 /* !Fin Navbar */
 
 /* ! Footer !! LISTO */
@@ -108,3 +109,85 @@
 }
 
 /* ! Fin Footer */
+
+/* ! Cards Index !! LISTO */
+.card {
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, .08), 0 0 6px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+}
+
+.card h5 {
+    color: #EB6440;
+    font-size: 20px;
+}
+
+.card img {
+    background-color: #cccccc;
+}
+
+.card p {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.card-body a {
+    text-align: center;
+    text-decoration: none;
+}
+
+.card-img-top:hover {
+    transform: scale(1.03);
+    border-radius: 15px;
+}
+
+/* ! Fin Cards */
+
+/* ! Comienzo Lineas Divisorias !! LISTO */
+.lineas {
+    text-align: center;
+    margin-top: 2em;
+    margin-bottom: 1em;
+    font-family: 'Roboto', sans-serif;
+}
+
+.lineas h2 {
+    position: relative;
+    /* mueve las lineas con respecto al texto */
+    display: inline-block;
+    color: rgba(122, 121, 121, 0.622);
+}
+
+.lineas h2::after,
+h2::before {
+    content: '';
+    /* es necesario para que se vea las lineas */
+    position: absolute;
+    top: 50%;
+    /* posicion de ubicacion de la linea */
+    border-bottom: 3px solid rgba(122, 121, 121, 0.622);
+    width: 18em;
+    /* tamaño de la linea */
+    height: 3px;
+    transition: 0.2s ease-in-out;
+    /* inicio y fin lentos */
+}
+
+.lineas h2::before {
+    left: -19em;
+    /* posicion linea */
+}
+
+.lineas h2::after {
+    right: -19em;
+}
+
+.lineas h2:hover::before {
+    translate: -20px;
+    /* se mueve -20px */
+}
+
+.lineas h2:hover::after {
+    translate: 20px;
+}
+/* !Fin Lineas */

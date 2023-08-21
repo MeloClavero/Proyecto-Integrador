@@ -9,8 +9,7 @@
 </head>
 
 <body class="body">
-  <header class="container">
-    <!-- ! navbar -->
+  <header class="container"> <!-- ! NAVBAR -->
     <nav class="navbar navbar-expand-lg navbar-m "> <!-- navbar-expand-lg: expande todo -->
       <a href="index.html"><img class="icono" src="public/imgs/icono.webp" alt=""> </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -21,29 +20,109 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0"> <!-- me: margin end -->
           <li class="nav-item">
-            <a class="nav-link" href="pages/smartphones.html">Smartphones</a>
+            <a class="nav-link" href="#">Smartphones</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="./pages/accesorios.html">Accesorios</a>
+            <a class="nav-link" href="#">Accesorios</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="./pages/computacion.html">Computación</a>
+            <a class="nav-link" href="#">Computación</a>
           </li>
         </ul>
         <form class="d-flex" role="search">
           <input class="form-control me-2" type="search" placeholder="¿Qué estás buscando?" aria-label="Search">
           <button class="btn btn-outline-success" type="submit">Buscar</button>
-          <a href="./pages/carrito.html"><i class="bi bi-cart4"></i></a>
-
+          <a href="#"><i class="bi bi-cart4"></i></a>
         </form>
       </div>
-    </nav> <!--  -->
-  </header>
+    </nav>
+  </header> <!-- ! FIN NAVBAR -->
   <main>
 
-  </main>
-  <section class="footer mt-5 container-fluid"> <!-- ! SECTION FOOTER -->
+    <div class="lineas">
+      <h2>SMARTPHONES</h2>
+    </div>
 
+
+    <section class="container"> <!--! Section card-->
+
+      <div class="row row-cols-2 row-cols-md-4 g-3">
+        <!-- row-cols-2: dos columnas al achicaar || row-cols-md-4 cantidad de columnas al estar abierto al 100% || g-2: espacio entre cards al achicar -->
+
+        <div class="col"> <!-- primera card -->
+          <div class="card">
+            <a href="#"><img src="/imgs/celulares/ph-1.jpg" class="card-img-top"
+                alt=""></a>
+            <div class="card-body">
+              <a href="#">
+                <h5 class="card-title">Redmi 10 2022 4GB RAM</h5>
+              </a>
+              <p class="card-text">$184.900</p>
+            </div>
+            <ul class="list-group list-group-flush ">
+              <li class="list-group-item d-flex justify-content-center"><img src="/imgs/cuotas.webp" alt=""></li>
+              <li class="list-group-item">Pantalla FHD+</li>
+              <li class="list-group-item">Camara 50Mpx</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card ">
+            <a href="#"><img src="/imgs/celulares/ph-2.jpg" class="card-img-top" alt=""></a>
+            <div class="card-body">
+              <a href="#">
+                <h5 class="card-title">Xiaomi 11T Pro 8GB RAM</h5>
+              </a>
+              <p class="card-text">$631.000</p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item d-flex justify-content-center"><img src="/imgs/cuotas.webp" alt=""></li>
+              <li class="list-group-item">Pantalla AMOLED 120Hz</li>
+              <li class="list-group-item">Camara 108 Mpx</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card">
+            <a href="#"><img src="/imgs/celulares/ph-3.jpg" class="card-img-top" alt=""></a>
+            <div class="card-body">
+              <a href="#">
+                <h5 class="card-title">Redmi Note 11 Pro+ 6GB RAM</h5>
+              </a>
+              <p class="card-text">$399.900</p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item d-flex justify-content-center"><img src="/imgs/cuotas.webp" alt=""></li>
+              <li class="list-group-item">Pantalla AMOLED 120Hz</li>
+              <li class="list-group-item">Camara 108 Mpx</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card">
+            <a href="#"><img src="/imgs/celulares/ph-4.jpg" class="card-img-top" alt=""></a>
+            <div class="card-body">
+              <a href="#">
+                <h5 class="card-title">Redmi Note 11S 6GB RAM</h5>
+              </a>
+              <p class="card-text">$350.900</p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item d-flex justify-content-center"><img src="/imgs/cuotas.webp" alt=""></li>
+              <li class="list-group-item">Pantalla AMOLED 6.43"</li>
+              <li class="list-group-item">Camara 108 Mpx</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section> <!-- ! FIN SECTION CARD-->
+
+  </main>
+
+  <section class="footer mt-5 container-fluid"> <!-- ! SECTION FOOTER -->
     <div class="container">
       <div class="row pt-5 row-cols-3">
         <div class="col-3">
@@ -54,7 +133,6 @@
             <li class="nav-item mb-4"><a href="#" class="nav-link  text-muted">Sobre nosotros</a></li>
           </ul>
         </div>
-
         <div class="col-3">
           <h5 class="border-navs">Contacto</h5>
           <ul class="nav flex-column">
@@ -63,14 +141,11 @@
             </li>
           </ul>
         </div>
-
         <div class="col-6">
           <form>
             <h5>Newsletter</h5>
             <p>Puede darse de baja en cualquier momento.</p>
-
             <div class="d-flex flex-column flex-sm-row w-100 gap-1">
-
               <input class="form-control me-2 mail" type="search" placeholder="Dirrección de correo electrónico"
                 aria-label="Search">
               <button class="btn btn-outline-success suscrip" type="submit">Suscribirme</button>
@@ -86,6 +161,7 @@
       </div>
     </div>
   </section> <!-- ! FIN FOOTER -->
+
 </body>
 <script type="module" src="/main.js"></script>
 
