@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <title>Proyecto Integrador - Etapa 1</title>
+</head>
+
+<body class="body">
+    <header class="container-fluid nav">
+        <!-- ! navbar -->
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-m "> <!-- navbar-expand-lg: expande todo -->
+                <a href="/index.html"><img class="icono" src="/public/imgs/icono.webp" alt=""> </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <!-- navbar-toggler para usar con nuestro complemento de colapso y otros comportamientos de alternancia de navegación. -->
+                    <span class="navbar-toggler-icon"></span> <!-- el icono al achicar la pagina -->
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0"> <!-- me: margin end -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="/pages/smartphones.html">Smartphones</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/pages/accesorios.html">Accesorios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/pages/computacion.html">Computación</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="¿Qué estás buscando?"
+                            aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Buscar</button>
+                        <a href="/pages/carrito.html"><i class="bi bi-cart4"></i></a>
+                    </form>
+                </div>
+            </nav> <!--  -->
+        </div>
+    </header>
+
+    <main>
+        <section class="container pt-4">
+            <div class="row productos">
+
+                <div class="col-md-6 mb-4">
+                    <img src="/public/imgs/computacion/mouse.jpg" class="img-fluid" alt="">
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="p-4">
+                        <strong>Mouse Inalámbrico Xiaomi Mi Dual Mode Silent Edition</strong>
+                        <div class="precios pb-5 pt-2">
+                            <span class="me-4 ">$17.899</span>
+                            <span class="text-decoration-line-through"></span> <!-- espaciado entre precios -->
+                        </div>
+                        <p>Funcionamiento ultra silencioso.</p>
+                        <p>Deslizamiento y desplazamiento silenciosos con rueda de goma suave.</p>
+                        <div class="d-flex justify-content-evenly py-5">
+                            <select class="form-select">
+                                <option selected>Cantidad</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                            </select>
+                            <button class="btn" type="button">Agregar al carrito</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <section class="footer container-fluid"> <!-- ! SECTION FOOTER -->
+        <div class="container">
+            <div class="row pt-5 row-cols-3">
+                <div class="col-3">
+                    <h5 class="border-navs">Links útiles</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-0"><a href="#" class="nav-link  text-muted ">Envios</a></li>
+                        <li class="nav-item mb-0"><a href="#" class="nav-link  text-muted">Métodos de pago</a></li>
+                        <li class="nav-item mb-4"><a href="#" class="nav-link  text-muted">Sobre nosotros</a></li>
+                    </ul>
+                </div>
+                <div class="col-3">
+                    <h5 class="border-navs">Contacto</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <p>ayuda@xiaomi.com.ar</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-6">
+                    <form>
+                        <h5>Newsletter</h5>
+                        <p>Puede darse de baja en cualquier momento.</p>
+                        <div class="d-flex flex-column flex-sm-row w-100 gap-1">
+                            <input class="form-control me-2 mail" type="search"
+                                placeholder="Dirrección de correo electrónico" aria-label="Search">
+                            <button class="btn btn-outline-success suscrip" type="submit">Suscribirme</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="d-flex align-content-center justify-content-center border-n">
+                <p>© 2023 Company, Inc. All rights reserved.</p>
+                <a class="mx-3" href="#"><i class="bi bi-twitter"></i></a>
+                <a class="mx-3" href="#"><i class="bi bi-instagram"></i></a>
+                <a class="mx-3" href="#"><i class="bi bi-facebook"></i></a>
+            </div>
+        </div>
+    </section> <!-- ! FIN FOOTER -->
+
+</body>
+<script type="module" src="/main.js"></script>
+
+</html>
