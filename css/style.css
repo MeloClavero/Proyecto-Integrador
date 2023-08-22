@@ -246,13 +246,13 @@
     background-color: rgba(128, 128, 128, 0.192);
 }
 
-.card button {
+.card.cards-productos a{
     border-radius: 50px;
     width: 150px;
 }
 
-.card.cards-productos button:hover {
-    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+.card.cards-productos a:hover {
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
     border: none;
 }
 
@@ -337,3 +337,56 @@
 }
 
 /* ! FIN CARRITO */
+
+/* ! Descripcion Productos !! LISTO*/
+.productos p {
+    font-size: 16px;
+    text-align: justify;
+}
+
+.productos strong {
+    font-weight: 400;
+    font-size: 38px;
+    text-shadow: 5px 5px 5px #aaa;;
+}
+
+.productos img {
+    width: 500px;
+    height: auto;
+}
+
+.precios span:last-child {
+    font-weight: 400;
+    font-style: italic;
+    font-size: 30px;
+}
+
+.precios span:first-child {
+    font-weight: 400;
+    font-size: 35px;
+    color: #EB6440;
+}
+
+.form-select {
+    width: 200px;
+    text-align: center;
+    border-radius: 10px;
+    border-color: #EB6440;
+}
+
+.productos button {
+    color: white;
+    font-weight: 400;
+    border-radius: 10px;
+    border-color: #EB6440;
+    background-color: #EB6440;
+}
+
+.productos button:hover {
+    background-color: aliceblue;
+    color: black;
+    border-color: #EB6440;
+}
+
+
+/* ! Fin Descripcion Productos */
