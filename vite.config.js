@@ -33,7 +33,10 @@ export default{
                 productos13:resolve('pages/productos/computacion-1.html'),
                 productos14:resolve('pages/productos/computacion-2.html'),
                 productos15:resolve('pages/productos/computacion-3.html'),
-                productos16:resolve('pages/productos/computacion-4.html')
+                productos16:resolve('pages/productos/computacion-4.html'),
+                envios:resolve('pages/envios.html'),
+                mpagos:resolve('pages/mpagos.html'),
+                nosotros:resolve('pages/nosotros.html')
             }
         }
     }
