@@ -36,15 +36,41 @@
                         <input class="form-control me-2" type="search" placeholder="¿Qué estás buscando?"
                             aria-label="Search">
                         <button class="btn btn-outline-success" type="submit">Buscar</button>
-                        <a href="/pages/carrito.html"><i class="bi bi-cart4"></i></a>
                     </form>
+                    <!-- ! Carrito -->
+                    <div class="dropdown dropstart">
+                        <a type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-cart4"></i>
+                        </a>
+                        <ul id="carrito" class="dropdown-menu mx-2">
+                            <table id="lista-carrito" class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Imagen</th>
+                                        <th scope="col">Nombre</th>
+                                        <th scope="col">Precio</th>
+                                        <th scope="col"></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="d-grid gap-2 d-md-block justigy-content-md-center ms-1">
+                                <button id="vaciar-carrito" class="btn btn-primary">Vaciar Carrito</button>
+                                <button id="procesar-pedido" class="btn btn-danger">Procesar Compra</button>
+                            </div>
+                        </ul>
+                    </div>
+                    <!-- ! fin carrito -->
                 </div>
             </nav> <!--  -->
         </div>
     </header>
 
     <main>
-        <section class="container pt-4">
+        <section id="lista-productos" class="container pt-4">
             <div class="row productos">
 
                 <div class="col-md-6 mb-4">
@@ -57,8 +83,13 @@
                             <span class="me-4 ">$461.900</span>
                             <span class="text-decoration-line-through">$552.000</span> <!-- espaciado entre precios -->
                         </div>
-                        <p>La estrella es el panel: una LCD con resolución 2K y tasa de refresco de 120Hz. Además, es compatible con HDR10 y Dolby Vision, por lo que a pesar de no contar con tecnología AMOLED, es un panel de categoría.</p>
-                        <p>La batería de esta Pad 5 es de 8.720mAh con carga rápida de 22.5W, buena cifra para alimentar los cuatro altavoces con tecnología Dolby Atmos de los que presume esta tablet. Esta tablet es compatible con lápiz óptico y funda con teclado, por lo que podemos equiparla para que sea un gran dispositivo a nivel de productividad y ofimática.</p>
+                        <p>La estrella es el panel: una LCD con resolución 2K y tasa de refresco de 120Hz. Además, es
+                            compatible con HDR10 y Dolby Vision, por lo que a pesar de no contar con tecnología AMOLED,
+                            es un panel de categoría.</p>
+                        <p>La batería de esta Pad 5 es de 8.720mAh con carga rápida de 22.5W, buena cifra para alimentar
+                            los cuatro altavoces con tecnología Dolby Atmos de los que presume esta tablet. Esta tablet
+                            es compatible con lápiz óptico y funda con teclado, por lo que podemos equiparla para que
+                            sea un gran dispositivo a nivel de productividad y ofimática.</p>
                         <div class="d-flex justify-content-evenly py-5">
                             <select class="form-select">
                                 <option selected>Cantidad</option>
@@ -66,7 +97,7 @@
                                 <option value="2">2</option>
                                 <option value="3">3</option>
                             </select>
-                            <button class="btn" type="button">Agregar al carrito</button>
+                            <button class="btn agregar-carrito" type="button" data-id="7">Agregar al carrito</button>
                         </div>
 
                     </div>
@@ -82,9 +113,12 @@
                 <div class="col-3">
                     <h5 class="border-navs">Links útiles</h5>
                     <ul class="nav flex-column">
-                        <li class="nav-item mb-0"><a href="/pages/envios.html" class="nav-link  text-muted ">Envios</a></li>
-                        <li class="nav-item mb-0"><a href="/pages/mpagos.html" class="nav-link  text-muted">Métodos de pago</a></li>
-                        <li class="nav-item mb-4"><a href="/pages/nosotros.html" class="nav-link  text-muted">Sobre nosotros</a></li>
+                        <li class="nav-item mb-0"><a href="/pages/envios.html" class="nav-link  text-muted ">Envios</a>
+                        </li>
+                        <li class="nav-item mb-0"><a href="/pages/mpagos.html" class="nav-link  text-muted">Métodos de
+                                pago</a></li>
+                        <li class="nav-item mb-4"><a href="/pages/nosotros.html" class="nav-link  text-muted">Sobre
+                                nosotros</a></li>
                     </ul>
                 </div>
                 <div class="col-3">

@@ -36,8 +36,34 @@
                         <input class="form-control me-2" type="search" placeholder="¿Qué estás buscando?"
                             aria-label="Search">
                         <button class="btn btn-outline-success" type="submit">Buscar</button>
-                        <a href="/pages/carrito.html"><i class="bi bi-cart4"></i></a>
                     </form>
+                    <!-- ! Carrito -->
+                    <div class="dropdown dropstart">
+                        <a type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-cart4"></i>
+                        </a>
+                        <ul id="carrito" class="dropdown-menu mx-2">
+                            <table id="lista-carrito" class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Imagen</th>
+                                        <th scope="col">Nombre</th>
+                                        <th scope="col">Precio</th>
+                                        <th scope="col"></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="d-grid gap-2 d-md-block justigy-content-md-center ms-1">
+                                <button id="vaciar-carrito" class="btn btn-primary">Vaciar Carrito</button>
+                                <button id="procesar-pedido" class="btn btn-danger">Procesar Compra</button>
+                            </div>
+                        </ul>
+                    </div>
+                    <!-- ! fin carrito -->
                 </div>
             </nav> <!--  -->
         </div>
@@ -54,7 +80,8 @@
                         <img src="../public/imgs/celulares/ph-1.jpg" class="img-fluid" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">Redmi 10 2022</h5>
-                            <p class="card-text text-start">¡Subí de nivel! Cámara cuádruple de 50 MP con IA | Pantalla FHD+ de 90 Hz</p>
+                            <p class="card-text text-start">¡Subí de nivel! Cámara cuádruple de 50 MP con IA | Pantalla
+                                FHD+ de 90 Hz</p>
                         </div>
                         <div class="mb-3 d-flex justify-content-around">
                             <h4>$155.900</h4>
@@ -83,7 +110,8 @@
                         <img src="../public/imgs/celulares/ph-3.jpg" class="img-fluid" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">Redmi Note 11 Pro+</h5>
-                            <p class="card-text text-start">Experiencia audiovisual excepcional gracias a la pantalla AMOLED de 120 Hz y sus parlantes.</p>
+                            <p class="card-text text-start">Experiencia audiovisual excepcional gracias a la pantalla
+                                AMOLED de 120 Hz y sus parlantes.</p>
                         </div>
                         <div class="mb-3 d-flex justify-content-around">
                             <h4>$399.900</h4>
@@ -97,7 +125,8 @@
                         <img src="../public/imgs/celulares/ph-4.jpg" class="img-fluid" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">Redmi Note 11S</h5>
-                            <p class="card-text text-start">Pantalla AMOLED de 6.43".Tiene 4 cámaras traseras de 108Mpx/8Mpx/2Mpx/2Mpx.</p>
+                            <p class="card-text text-start">Pantalla AMOLED de 6.43".Tiene 4 cámaras traseras de
+                                108Mpx/8Mpx/2Mpx/2Mpx.</p>
                         </div>
                         <div class="mb-3 d-flex justify-content-around">
                             <h4>$350.900</h4>
@@ -111,7 +140,8 @@
                         <img src="../public/imgs/celulares/ph-5.jpg" class="img-fluid" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">Redmi 10A</h5>
-                            <p class="card-text text-start">Pantalla de 6,53". Tus películas favoritas cobran vida en la gran pantalla HD+ de 6,53".</p>
+                            <p class="card-text text-start">Pantalla de 6,53". Tus películas favoritas cobran vida en la
+                                gran pantalla HD+ de 6,53".</p>
                         </div>
                         <div class="mb-3 d-flex justify-content-around">
                             <h4>$95.899</h4>
@@ -125,7 +155,8 @@
                         <img src="../public/imgs/celulares/ph-6.jpg" class="img-fluid" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">Xiaomi 11T</h5>
-                            <p class="card-text text-start">Xiaomi 11T le permite cargar la batería al 100% en 36 minutos!.</p>
+                            <p class="card-text text-start">Xiaomi 11T le permite cargar la batería al 100% en 36
+                                minutos!.</p>
                         </div>
                         <div class="mb-3 d-flex justify-content-around">
                             <h4>$498.900</h4>
@@ -143,9 +174,12 @@
                 <div class="col-3">
                     <h5 class="border-navs">Links útiles</h5>
                     <ul class="nav flex-column">
-                        <li class="nav-item mb-0"><a href="/pages/envios.html" class="nav-link  text-muted ">Envios</a></li>
-                        <li class="nav-item mb-0"><a href="/pages/mpagos.html" class="nav-link  text-muted">Métodos de pago</a></li>
-                        <li class="nav-item mb-4"><a href="/pages/nosotros.html" class="nav-link  text-muted">Sobre nosotros</a></li>
+                        <li class="nav-item mb-0"><a href="/pages/envios.html" class="nav-link  text-muted ">Envios</a>
+                        </li>
+                        <li class="nav-item mb-0"><a href="/pages/mpagos.html" class="nav-link  text-muted">Métodos de
+                                pago</a></li>
+                        <li class="nav-item mb-4"><a href="/pages/nosotros.html" class="nav-link  text-muted">Sobre
+                                nosotros</a></li>
                     </ul>
                 </div>
                 <div class="col-3">

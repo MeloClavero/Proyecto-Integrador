@@ -36,15 +36,41 @@
                         <input class="form-control me-2" type="search" placeholder="¿Qué estás buscando?"
                             aria-label="Search">
                         <button class="btn btn-outline-success" type="submit">Buscar</button>
-                        <a href="/pages/carrito.html"><i class="bi bi-cart4"></i></a>
                     </form>
+                    <!-- ! Carrito -->
+                    <div class="dropdown dropstart">
+                        <a type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-cart4"></i>
+                        </a>
+                        <ul id="carrito" class="dropdown-menu mx-2">
+                            <table id="lista-carrito" class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Imagen</th>
+                                        <th scope="col">Nombre</th>
+                                        <th scope="col">Precio</th>
+                                        <th scope="col"></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="d-grid gap-2 d-md-block justigy-content-md-center ms-1">
+                                <button id="vaciar-carrito" class="btn btn-primary">Vaciar Carrito</button>
+                                <button id="procesar-pedido" class="btn btn-danger">Procesar Compra</button>
+                            </div>
+                        </ul>
+                    </div>
+                    <!-- ! fin carrito -->
                 </div>
             </nav> <!--  -->
         </div>
     </header>
 
     <main>
-        <section class="container pt-4">
+        <section id="lista-productos" class="container pt-4">
             <div class="row productos">
 
                 <div class="col-md-6 mb-4">
@@ -57,8 +83,15 @@
                             <span class="me-4 ">$33.200</span>
                             <span class="text-decoration-line-through"></span> <!-- espaciado entre precios -->
                         </div>
-                        <p>La Mi LCD Writing Tablet utiliza una película LCD personalizada con escritura azul y verde, y una pantalla increíblemente nítida, por lo que combina la experiencia de escribir en papel tradicional con la de una pantalla LCD suave.</p>
-                        <p>Gracias a los sensores de presión de alta sensibilidad, el grosor de la escritura a mano cambia según la fuerzaY con la tecnología de sensor de presión de alta sensibilidad y a la pantalla LCD flexible y suave, el grosor de la escritura a mano se determina según la presión aplicada: cuanto más fuerte presiones la pantalla, más grueso será el trazo. Utiliza la punta del dedo u otros objetos para escribir sin retardos en la pantalla, o bien escribe con el lápiz suministrado para obtener los mejores resultados.</p>
+                        <p>La Mi LCD Writing Tablet utiliza una película LCD personalizada con escritura azul y verde, y
+                            una pantalla increíblemente nítida, por lo que combina la experiencia de escribir en papel
+                            tradicional con la de una pantalla LCD suave.</p>
+                        <p>Gracias a los sensores de presión de alta sensibilidad, el grosor de la escritura a mano
+                            cambia según la fuerzaY con la tecnología de sensor de presión de alta sensibilidad y a la
+                            pantalla LCD flexible y suave, el grosor de la escritura a mano se determina según la
+                            presión aplicada: cuanto más fuerte presiones la pantalla, más grueso será el trazo. Utiliza
+                            la punta del dedo u otros objetos para escribir sin retardos en la pantalla, o bien escribe
+                            con el lápiz suministrado para obtener los mejores resultados.</p>
                         <div class="d-flex justify-content-evenly py-5">
                             <select class="form-select">
                                 <option selected>Cantidad</option>
@@ -66,7 +99,7 @@
                                 <option value="2">2</option>
                                 <option value="3">3</option>
                             </select>
-                            <button class="btn" type="button">Agregar al carrito</button>
+                            <button class="btn agregar-carrito" type="button" data-id="8">Agregar al carrito</button>
                         </div>
 
                     </div>
@@ -82,9 +115,12 @@
                 <div class="col-3">
                     <h5 class="border-navs">Links útiles</h5>
                     <ul class="nav flex-column">
-                        <li class="nav-item mb-0"><a href="/pages/envios.html" class="nav-link  text-muted ">Envios</a></li>
-                        <li class="nav-item mb-0"><a href="/pages/mpagos.html" class="nav-link  text-muted">Métodos de pago</a></li>
-                        <li class="nav-item mb-4"><a href="/pages/nosotros.html" class="nav-link  text-muted">Sobre nosotros</a></li>
+                        <li class="nav-item mb-0"><a href="/pages/envios.html" class="nav-link  text-muted ">Envios</a>
+                        </li>
+                        <li class="nav-item mb-0"><a href="/pages/mpagos.html" class="nav-link  text-muted">Métodos de
+                                pago</a></li>
+                        <li class="nav-item mb-4"><a href="/pages/nosotros.html" class="nav-link  text-muted">Sobre
+                                nosotros</a></li>
                     </ul>
                 </div>
                 <div class="col-3">

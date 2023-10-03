@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -33,10 +34,36 @@
           <form class="d-flex" role="search">
             <input class="form-control me-2" type="search" placeholder="¿Qué estás buscando?" aria-label="Search">
             <button class="btn btn-outline-success" type="submit">Buscar</button>
-            <a href="/pages/carrito.html"><i class="bi bi-cart4"></i></a>
           </form>
+          
+
+          <!-- ! Carrito -->
+          <div class="dropdown dropstart">
+            <a type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="bi bi-cart4"></i>
+            </a>
+            <ul id="carrito" class="dropdown-menu mx-2">
+              <table id="lista-carrito" class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Imagen</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Precio</th>
+                    <th scope="col"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                </tbody>
+              </table>
+              <div class="d-grid gap-2 d-md-block justigy-content-md-center ms-1">
+                <button id="vaciar-carrito" class="btn btn-primary">Vaciar Carrito</button>
+                <button id="procesar-pedido" class="btn btn-danger">Procesar Compra</button>
+              </div>
+            </ul>
+          </div>
+          <!-- ! fin carrito -->
         </div>
-      </nav> <!--  -->
+      </nav> 
     </div>
   </header>
 
@@ -88,7 +115,8 @@
 
         <div class="col"> <!-- primera card -->
           <div class="card">
-            <a href="pages/productos/smartphone-1.html"><img src="/imgs/celulares/ph-1.jpg" class="card-img-top " alt=""></a>
+            <a href="pages/productos/smartphone-1.html"><img src="/imgs/celulares/ph-1.jpg" class="card-img-top "
+                alt=""></a>
             <div class="card-body">
               <a href="pages/productos/smartphone-1.html">
                 <h5 class="card-title">Redmi 10 2022 4GB RAM</h5>
@@ -105,7 +133,8 @@
 
         <div class="col"> <!-- segunda card -->
           <div class="card ">
-            <a href="pages/productos/smartphone-2.html"><img src="/imgs/celulares/ph-2.jpg" class="card-img-top" alt=""></a>
+            <a href="pages/productos/smartphone-2.html"><img src="/imgs/celulares/ph-2.jpg" class="card-img-top"
+                alt=""></a>
             <div class="card-body">
               <a href="pages/productos/smartphone-2.html">
                 <h5 class="card-title">Xiaomi 11T Pro 8GB RAM</h5>
@@ -122,7 +151,8 @@
 
         <div class="col"> <!-- tercera card -->
           <div class="card">
-            <a href="pages/productos/smartphone-3.html"><img src="/imgs/celulares/ph-3.jpg" class="card-img-top" alt=""></a>
+            <a href="pages/productos/smartphone-3.html"><img src="/imgs/celulares/ph-3.jpg" class="card-img-top"
+                alt=""></a>
             <div class="card-body">
               <a href="pages/productos/smartphone-3.html">
                 <h5 class="card-title">Redmi Note 11 Pro+ 6GB RAM</h5>
@@ -139,7 +169,8 @@
 
         <div class="col"> <!-- cuarta card -->
           <div class="card">
-            <a href="pages/productos/smartphone-4.html"><img src="/imgs/celulares/ph-4.jpg" class="card-img-top" alt=""></a>
+            <a href="pages/productos/smartphone-4.html"><img src="/imgs/celulares/ph-4.jpg" class="card-img-top"
+                alt=""></a>
             <div class="card-body">
               <a href="pages/productos/smartphone-4.html">
                 <h5 class="card-title">Redmi Note 11S 6GB RAM</h5>
@@ -222,8 +253,8 @@
   </main>
 
   <section class="footer mt-5 container-fluid"> <!-- ! SECTION FOOTER -->
-    
-<div class="container">
+
+    <div class="container">
       <div class="row pt-5 row-cols-3">
         <div class="col-3">
           <h5 class="border-navs">Links útiles</h5>
