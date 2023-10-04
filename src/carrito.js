@@ -1,4 +1,6 @@
 const listaProductos = document.querySelector('#lista-carrito tbody')
+const listaCompra = document.querySelector('#lista-compra')
+
 
 // Añadir un producto al carrito
 export function comprarProducto(e) {
@@ -19,8 +21,10 @@ function leerDatosProducto(producto) {
         titulo: producto.querySelector('strong').textContent,
         precio: producto.querySelector('span:first-child').textContent,
         id: producto.querySelector('button').getAttribute('data-id'),
-        cantidad: 1
+        cantidad: 1,
+        categoria: producto.querySelector('strong:first-child').getAttribute('data-id')
     }
+
     //console.log(infoProducto)
     let productosLS
     productosLS = obtenerProductosLocalStorage()
@@ -36,6 +40,7 @@ function leerDatosProducto(producto) {
     } else {
         insertarCarrito(infoProducto)
     }
+
 
 }
 // Comprobar que hay elementos en el LS
@@ -165,11 +170,43 @@ export function procesarPedido(e) {
 }
 
 //Mostrar los productos guardados en el ls en la pagina de carrito
-export function leerLocalStorageCompra(){
+export function leerLocalStorageCompra() {    
     let productosLS
     productosLS = obtenerProductosLocalStorage()
-    productosLS.forEach(function (producto){
-        
+    productosLS.forEach(function (producto) {
+        const div = document.createElement('div')
+        div.classList.add('row')
+        div.innerHTML = `                
+                        <hr class="my-4">
+
+                        <div class="row d-flex align-items-center ">
+                            <div class="col-md-2">
+                                <img src="${producto.imagen}" class="img-fluid" alt="${producto.titulo}">
+                            </div>
+                            <div class="col-md-4">
+                                <h6 class="text-muted">${producto.categoria}</h6>
+                                <h6>${producto.titulo}</h6>
+                            </div>
+                            <div class="col-md-2">
+                                <select class="form-select cart">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3 d-flex justify-content-center">
+                                <h6>${producto.precio}</h6>
+                            </div>
+                            <div class="col-md-1 justify-content-center">
+                                <a href="#" class="text-muted"><i class="bi bi-trash3"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <div>
+        `
+        listaCompra.appendChild(div)
     })
 }
 
