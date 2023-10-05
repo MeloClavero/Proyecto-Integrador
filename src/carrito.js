@@ -2,6 +2,7 @@ const listaProductos = document.querySelector('#lista-carrito tbody')
 const listaCompra = document.querySelector('#lista-compra')
 
 
+
 // Añadir un producto al carrito
 export function comprarProducto(e) {
     e.preventDefault() // Detener el comportamiento por defecto de los a o los formularios
@@ -170,7 +171,7 @@ export function procesarPedido(e) {
 }
 
 //Mostrar los productos guardados en el ls en la pagina de carrito
-export function leerLocalStorageCompra() {    
+export function leerLocalStorageCompra() {
     let productosLS
     productosLS = obtenerProductosLocalStorage()
     productosLS.forEach(function (producto) {
@@ -188,17 +189,14 @@ export function leerLocalStorageCompra() {
                                 <h6>${producto.titulo}</h6>
                             </div>
                             <div class="col-md-2">
-                                <select class="form-select cart">
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                </select>
+                                <input type="number" class="form-control text-center cantidad" placeholder="Cantidad" value="${producto.cantidad}">
                             </div>
                             <div class="col-md-3 d-flex justify-content-center">
-                                <h6>${producto.precio}</h6>
+                                <h6 class="precio">$${producto.precio * producto.cantidad}</h6>
                             </div>
+
                             <div class="col-md-1 justify-content-center">
-                                <a href="#" class="text-muted"><i class="bi bi-trash3"></i></a>
+                                <a data-id=${producto.id} class="btn borrar-producto-compra bi bi-trash3 text-muted"></a>
                             </div>
                         </div>
         `
@@ -206,3 +204,67 @@ export function leerLocalStorageCompra() {
     })
 }
 
+
+//elimina el producto de la pag carrito
+export const eliminarProductoCompra = (e) => {
+    e.preventDefault()
+    let productoID
+    if (e.target.classList.contains('borrar-producto-compra')) {
+        e.target.parentElement.parentElement.remove()
+        let producto = e.target.parentElement.parentElement
+        productoID = producto.querySelector('a').getAttribute('data-id')
+    }
+    eliminarProductoLocalStorage(productoID)
+}
+
+//evento input de cantidad
+export const obtenerEvento = (e) => {
+    e.preventDefault()
+    //console.log(e.target)
+    let id, cantidad, producto, productosLS
+    if (e.target.classList.contains('cantidad')) {
+        console.log('cambio el input')
+        producto = e.target.parentElement.parentElement
+        console.log(producto)
+        id = producto.querySelector('a').getAttribute('data-id')
+        //console.log(id)
+        cantidad = producto.querySelector('input').value
+        //console.log(cantidad)
+        let precio = producto.querySelector('.precio')
+        productosLS = obtenerProductosLocalStorage()
+        productosLS.forEach(function (productoLs, index) {
+            if (productoLs.id === id) {
+                productoLs.cantidad = cantidad
+                //console.log(productoLs.cantidad)
+                //console.log(productoLs.precio)
+                // debugger
+                let total = Number(productoLs.cantidad) * Number(productoLs.precio)
+                precio.textContent = total.toFixed(2)
+            }
+        })
+        localStorage.setItem('productos', JSON.stringify(productosLS))
+        calcularTotal()
+    }
+
+
+}
+
+export function calcularTotal() {
+    let productosLS
+    let total = 0, subtotal = 0, impuestos = 0
+    productosLS = obtenerProductosLocalStorage()
+
+    productosLS.forEach( productoLs => {
+        let totalProducto = Number(productoLs.cantidad * productoLs.precio)
+        total = total + totalProducto
+    })
+
+    // console.log(total)
+    impuestos = parseFloat(total * 0.18).toFixed(2)
+    subtotal = parseFloat(total-impuestos).toFixed(2)
+
+    document.querySelector('#total').textContent = total.toFixed(2)
+    document.querySelector('#sub-total').textContent = subtotal
+    document.querySelector('#iva').textContent = impuestos
+
+}
