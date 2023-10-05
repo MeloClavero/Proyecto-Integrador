@@ -6,10 +6,13 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js'
 
 import './css/style.css'
 import {
+    calcularTotal,
     comprarProducto,
     eliminarProducto,
+    eliminarProductoCompra,
     leerLocalStorage,
     leerLocalStorageCompra,
+    obtenerEvento,
     procesarPedido,
     vaciarCarrito
 } from './src/carrito'
@@ -39,11 +42,12 @@ function cargarEventos() {
 }
 
 function esIndex() {
+    document.addEventListener('DOMContentLoaded', leerLocalStorage())
     const carrito = document.getElementById('carrito')
     const vaciarCarritoBtn = carrito.querySelector('#vaciar-carrito')
     const procesarPedidoBtn = carrito.querySelector('#procesar-pedido')
 
-    document.addEventListener('DOMContentLoaded', leerLocalStorage())
+    
     carrito.addEventListener('click', e => eliminarProducto(e))
     vaciarCarritoBtn.addEventListener('click', e => vaciarCarrito(e))
     procesarPedidoBtn.addEventListener('click', e => procesarPedido(e))
@@ -89,7 +93,14 @@ function esOtros() {
 
 
 function esCarrito() {
+ 
+    const carritoCompra = document.getElementById('lista-compra')
     document.addEventListener('DOMContentLoaded', leerLocalStorageCompra())
+    carritoCompra.addEventListener('click', e => eliminarProductoCompra(e))
+    calcularTotal()
+    carritoCompra.addEventListener('change', e=> obtenerEvento(e))
+    carritoCompra.addEventListener('keyup', e=> obtenerEvento(e))
+    
 }
 
 
