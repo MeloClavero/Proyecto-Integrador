@@ -201,10 +201,6 @@ export function leerLocalStorageCompra() {
                                 <a href="#" class="text-muted"><i class="bi bi-trash3"></i></a>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-        <div>
         `
         listaCompra.appendChild(div)
     })

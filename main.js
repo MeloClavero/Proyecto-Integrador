@@ -17,8 +17,6 @@ import {
 
 
 
-
-
 cargarEventos()
 function cargarEventos() {
     const ruta = String(location.href)
