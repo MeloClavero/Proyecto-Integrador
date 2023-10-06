@@ -88,6 +88,24 @@ function guardarProductosLocalStorage(producto) {
 
 }
 
+export function cargarLocalStorage() {
+    let productosLS
+    productosLS = obtenerProductosLocalStorage()
+    productosLS.forEach(function (producto) {
+        const row = document.createElement('tr')
+        row.innerHTML = `
+        <td>
+            <img src="${producto.imagen}" alt="${producto.titulo}" width="100">
+        </td>
+        <td>${producto.titulo}</td>
+        <td>${producto.precio}</td>
+        <td>
+            <a href="#" class="borrar-producto bi bi-x-circle" data-id="${producto.id}"></a>
+        </td>
+        `
+        listaProductos.appendChild(row)
+    })
+}
 
 export function leerLocalStorage() {
     let productosLS

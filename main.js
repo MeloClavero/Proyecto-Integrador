@@ -17,63 +17,59 @@ import {
     vaciarCarrito
 } from './src/carrito'
 
+const productos = document.getElementById('lista-productos')
+const carrito = document.getElementById('carrito')
+const carritoCompra = document.getElementById('lista-compra')
+
 
 
 
 cargarEventos()
 function cargarEventos() {
     const ruta = String(location.href)
-
-    if (ruta.includes("pages/productos")) {
-        esProductos();
-    }
-    else if (ruta.includes("smartphones.html") || ruta.includes("accesorios.html") || ruta.includes("computacion.html")) {
-        esCategorias();
+    if (ruta.includes("smartphones.html") || ruta.includes("accesorios.html") || ruta.includes("computacion.html")) {
+        esCategorias()
     }
     else if (ruta.includes("envios.html") || ruta.includes("mpagos.html") || ruta.includes("nosotros.html")) {
-        esOtros();
+        esOtros()
     }
-    else if (ruta.includes("index.html")) {
-        esIndex();
+    else if (ruta.includes("pages/productos")) {
+        esProductos()
     }
     else if (ruta.includes("carrito.html")) {
-        esCarrito();
+        esCarrito()
+    }
+    else {
+        esIndex()
     }
 }
 
 function esIndex() {
-    document.addEventListener('DOMContentLoaded', leerLocalStorage())
-    const carrito = document.getElementById('carrito')
     const vaciarCarritoBtn = carrito.querySelector('#vaciar-carrito')
     const procesarPedidoBtn = carrito.querySelector('#procesar-pedido')
-
-    
-    carrito.addEventListener('click', e => eliminarProducto(e))
+    document.addEventListener('DOMContentLoaded', leerLocalStorage())
     vaciarCarritoBtn.addEventListener('click', e => vaciarCarrito(e))
     procesarPedidoBtn.addEventListener('click', e => procesarPedido(e))
+    carrito.addEventListener('click', e => eliminarProducto(e))
+
 }
 
 
 function esCategorias() {
-    const carrito = document.getElementById('carrito')
     const vaciarCarritoBtn = carrito.querySelector('#vaciar-carrito')
     const procesarPedidoBtn = carrito.querySelector('#procesar-pedido')
-
-    document.addEventListener('DOMContentLoaded', leerLocalStorage())
-    carrito.addEventListener('click', e => eliminarProducto(e))
     vaciarCarritoBtn.addEventListener('click', e => vaciarCarrito(e))
+    document.addEventListener('DOMContentLoaded', leerLocalStorage())
     procesarPedidoBtn.addEventListener('click', e => procesarPedido(e))
+    carrito.addEventListener('click', e => eliminarProducto(e))
 }
 
 
 function esProductos() {
-    const productos = document.getElementById('lista-productos')
-    const carrito = document.getElementById('carrito')
     const vaciarCarritoBtn = carrito.querySelector('#vaciar-carrito')
     const procesarPedidoBtn = carrito.querySelector('#procesar-pedido')
-
-    productos.addEventListener('click', (e) => comprarProducto(e))
     document.addEventListener('DOMContentLoaded', leerLocalStorage())
+    productos.addEventListener('click', (e) => comprarProducto(e))
     carrito.addEventListener('click', e => eliminarProducto(e))
     vaciarCarritoBtn.addEventListener('click', e => vaciarCarrito(e))
     procesarPedidoBtn.addEventListener('click', e => procesarPedido(e))
@@ -81,10 +77,8 @@ function esProductos() {
 
 
 function esOtros() {
-    const carrito = document.getElementById('carrito')
     const vaciarCarritoBtn = carrito.querySelector('#vaciar-carrito')
     const procesarPedidoBtn = carrito.querySelector('#procesar-pedido')
-
     document.addEventListener('DOMContentLoaded', leerLocalStorage())
     carrito.addEventListener('click', e => eliminarProducto(e))
     vaciarCarritoBtn.addEventListener('click', e => vaciarCarrito(e))
@@ -93,14 +87,12 @@ function esOtros() {
 
 
 function esCarrito() {
- 
-    const carritoCompra = document.getElementById('lista-compra')
     document.addEventListener('DOMContentLoaded', leerLocalStorageCompra())
     carritoCompra.addEventListener('click', e => eliminarProductoCompra(e))
     calcularTotal()
-    carritoCompra.addEventListener('change', e=> obtenerEvento(e))
-    carritoCompra.addEventListener('keyup', e=> obtenerEvento(e))
-    
+    carritoCompra.addEventListener('change', e => obtenerEvento(e))
+    carritoCompra.addEventListener('keyup', e => obtenerEvento(e))
+
 }
 
 
