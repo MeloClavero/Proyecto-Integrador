@@ -15,6 +15,7 @@ import {
     leerLocalStorageCompra,
     obtenerEvento,
     procesarPedido,
+    suscribirse,
     vaciarCarrito
 } from './src/carrito'
 
@@ -48,6 +49,7 @@ function cargarEventos() {
 function esIndex() {
     const vaciarCarritoBtn = carrito.querySelector('#vaciar-carrito')
     const procesarPedidoBtn = carrito.querySelector('#procesar-pedido')
+    document.addEventListener('DOMContentLoaded',suscribirse())
     document.addEventListener('DOMContentLoaded', leerLocalStorage())
     vaciarCarritoBtn.addEventListener('click', e => vaciarCarrito(e))
     procesarPedidoBtn.addEventListener('click', e => procesarPedido(e))

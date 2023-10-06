@@ -320,4 +320,23 @@ function mostrarNotificacionProductoAgregado() {
 }
 
 
+export function suscribirse() {
+    const yaSeMostroSweetAlert = sessionStorage.getItem("sweetAlertMostrado")
+    if (!yaSeMostroSweetAlert) {
+        Swal.fire({
+            title: '<span style="font-size: 20px;">¡Suscríbete y recibe $2000 de regalo!</span>',
+    html:
+        '<label for="email" style="font-size: 14px;">Correo Electrónico:</label>' +
+        '<input type="email" id="email" class="swal2-input" style="font-size: 14px;" placeholder="Ingrese su correo electrónico">' + '<br>'+
+        '<label for="telefono" style="font-size: 14px;">Teléfono:</label>' +
+        '<input type="tel" id="telefono" class="swal2-input" style="font-size: 14px;" placeholder="Ingrese su teléfono">',
+    showCancelButton: true,
+    showconfirmButton:true,
+    confirmButtonText: 'Suscribirme',
+    cancelButtonText: 'Cancelar',
+    showCloseButton: true,
+        })
+        sessionStorage.setItem("sweetAlertMostrado",true)
+    }
 
+}
