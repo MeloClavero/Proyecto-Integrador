@@ -1,6 +1,7 @@
 /* Librerias */
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap.bundle.min.js'
+import 'animate.css'
 
 /* Archivos de proyecto */
 

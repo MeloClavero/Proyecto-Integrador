@@ -1,3 +1,6 @@
+import Swal from 'sweetalert2';
+import 'sweetalert2/dist/sweetalert2.css'
+
 const listaProductos = document.querySelector('#lista-carrito tbody')
 const listaCompra = document.querySelector('#lista-compra')
 
@@ -5,13 +8,11 @@ const listaCompra = document.querySelector('#lista-compra')
 
 // Añadir un producto al carrito
 export function comprarProducto(e) {
-    e.preventDefault() // Detener el comportamiento por defecto de los a o los formularios
-    // Delegar para agregar al carrito
-    //console.dir(e.target) // ! Elemento al que le hago click (target)
+    e.preventDefault()
     if (e.target.classList.contains('agregar-carrito')) {
         const producto = e.target.parentElement.parentElement.parentElement.parentElement
-        console.log(producto)
         leerDatosProducto(producto)
+        console.log('producto')
     }
 }
 
@@ -38,8 +39,15 @@ function leerDatosProducto(producto) {
 
     if (productosLS === infoProducto.id) {
         console.warn('El producto ya está (en el carrito) en el localStorage')
+        Swal.fire({
+            title: 'Producto Agregado',
+            text: 'El producto ya se encuentra en el carrito',
+            showConfirmButton: false,
+            timer: 2250 // La notificación se ocultará automáticamente después de 1.5 segundos
+        })
     } else {
         insertarCarrito(infoProducto)
+        mostrarNotificacionProductoAgregado()
     }
 
 
@@ -133,9 +141,22 @@ export function eliminarProducto(e) {
     if (e.target.classList.contains('borrar-producto')) {
         producto = e.target.parentElement.parentElement
         productoID = producto.querySelector('a').getAttribute('data-id')
-        producto.remove()
 
-        eliminarProductoLocalStorage(productoID)
+        Swal.fire({
+            title: '¿Estás seguro?',
+            text: 'Esta acción eliminará el producto. ¿Deseas continuar?',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Sí, eliminar',
+            cancelButtonText: 'Cancelar'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // Si el usuario confirmó, elimina el producto
+                producto.remove();
+                eliminarProductoLocalStorage(productoID)
+                Swal.fire('Producto eliminado', 'El producto ha sido eliminado correctamente', 'success')
+            }
+        })
     }
 }
 
@@ -233,6 +254,7 @@ export const eliminarProductoCompra = (e) => {
         productoID = producto.querySelector('a').getAttribute('data-id')
     }
     eliminarProductoLocalStorage(productoID)
+    calcularTotal()
 }
 
 //evento input de cantidad
@@ -272,17 +294,30 @@ export function calcularTotal() {
     let total = 0, subtotal = 0, impuestos = 0
     productosLS = obtenerProductosLocalStorage()
 
-    productosLS.forEach( productoLs => {
+    productosLS.forEach(productoLs => {
         let totalProducto = Number(productoLs.cantidad * productoLs.precio)
         total = total + totalProducto
     })
 
     // console.log(total)
     impuestos = parseFloat(total * 0.18).toFixed(2)
-    subtotal = parseFloat(total-impuestos).toFixed(2)
+    subtotal = parseFloat(total - impuestos).toFixed(2)
 
     document.querySelector('#total').textContent = total.toFixed(2)
     document.querySelector('#sub-total').textContent = subtotal
     document.querySelector('#iva').textContent = impuestos
 
 }
+
+function mostrarNotificacionProductoAgregado() {
+    Swal.fire({
+        icon: 'success',
+        title: 'Producto Agregado',
+        text: 'El producto se ha agregado al carrito con éxito.',
+        showConfirmButton: false,
+        timer: 2250 // La notificación se ocultará automáticamente después de 1.5 segundos
+    })
+}
+
+
+
