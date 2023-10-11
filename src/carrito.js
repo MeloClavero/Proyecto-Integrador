@@ -3,6 +3,7 @@ import 'sweetalert2/dist/sweetalert2.css'
 
 const listaProductos = document.querySelector('#lista-carrito tbody')
 const listaCompra = document.querySelector('#lista-compra')
+const btnSwitch = document.querySelector('#switch')
 
 
 
@@ -325,18 +326,43 @@ export function suscribirse() {
     if (!yaSeMostroSweetAlert) {
         Swal.fire({
             title: '<span style="font-size: 20px;">¡Suscríbete y recibe $2000 de regalo!</span>',
-    html:
-        '<label for="email" style="font-size: 14px;">Correo Electrónico:</label>' +
-        '<input type="email" id="email" class="swal2-input" style="font-size: 14px;" placeholder="Ingrese su correo electrónico">' + '<br>'+
-        '<label for="telefono" style="font-size: 14px;">Teléfono:</label>' +
-        '<input type="tel" id="telefono" class="swal2-input" style="font-size: 14px;" placeholder="Ingrese su teléfono">',
-    showCancelButton: true,
-    showconfirmButton:true,
-    confirmButtonText: 'Suscribirme',
-    cancelButtonText: 'Cancelar',
-    showCloseButton: true,
+            html:
+                '<label for="email" style="font-size: 14px;">Correo Electrónico:</label>' +
+                '<input type="email" id="email" class="swal2-input" style="font-size: 14px;" placeholder="Ingrese su correo electrónico">' + '<br>' +
+                '<label for="telefono" style="font-size: 14px;">Teléfono:</label>' +
+                '<input type="tel" id="telefono" class="swal2-input" style="font-size: 14px;" placeholder="Ingrese su teléfono">',
+            showCancelButton: true,
+            showconfirmButton: true,
+            confirmButtonText: 'Suscribirme',
+            cancelButtonText: 'Cancelar',
+            showCloseButton: true,
         })
-        sessionStorage.setItem("sweetAlertMostrado",true)
+        sessionStorage.setItem("sweetAlertMostrado", true)
+    }
+}
+
+// modo dark
+
+export function leerModo(){
+    if (localStorage.getItem('dark-mode') === 'true') { 
+        document.body.classList.add('dark')  //agrega la clase dark a body
+        btnSwitch.classList.add('active'); //al switch le agrega active
+    } else {
+        document.body.classList.remove('dark') //borra clase dark
+        btnSwitch.classList.remove('active') //al boton switch elimina clase active
     }
 
+    // Agregar el evento click al botón
+    btnSwitch.addEventListener('click', () => {
+        document.body.classList.toggle('dark')
+        btnSwitch.classList.toggle('active')
+
+        // Guardamos el modo en localstorage
+        if (document.body.classList.contains('dark')) {
+            localStorage.setItem('dark-mode', 'true')
+        } else {
+            localStorage.setItem('dark-mode', 'false')
+        }
+    })
 }
+

@@ -13,6 +13,7 @@ import {
     eliminarProductoCompra,
     leerLocalStorage,
     leerLocalStorageCompra,
+    leerModo,
     obtenerEvento,
     procesarPedido,
     suscribirse,
@@ -22,6 +23,7 @@ import {
 const productos = document.getElementById('lista-productos')
 const carrito = document.getElementById('carrito')
 const carritoCompra = document.getElementById('lista-compra')
+const btnSwitch = document.querySelector('#switch')
 
 
 
@@ -47,6 +49,7 @@ function cargarEventos() {
 }
 
 function esIndex() {
+    leerModo()
     const vaciarCarritoBtn = carrito.querySelector('#vaciar-carrito')
     const procesarPedidoBtn = carrito.querySelector('#procesar-pedido')
     document.addEventListener('DOMContentLoaded',suscribirse())
@@ -59,6 +62,7 @@ function esIndex() {
 
 
 function esCategorias() {
+    leerModo()
     const vaciarCarritoBtn = carrito.querySelector('#vaciar-carrito')
     const procesarPedidoBtn = carrito.querySelector('#procesar-pedido')
     vaciarCarritoBtn.addEventListener('click', e => vaciarCarrito(e))
@@ -69,6 +73,7 @@ function esCategorias() {
 
 
 function esProductos() {
+    leerModo()
     const vaciarCarritoBtn = carrito.querySelector('#vaciar-carrito')
     const procesarPedidoBtn = carrito.querySelector('#procesar-pedido')
     document.addEventListener('DOMContentLoaded', leerLocalStorage())
@@ -80,6 +85,7 @@ function esProductos() {
 
 
 function esOtros() {
+    leerModo()
     const vaciarCarritoBtn = carrito.querySelector('#vaciar-carrito')
     const procesarPedidoBtn = carrito.querySelector('#procesar-pedido')
     document.addEventListener('DOMContentLoaded', leerLocalStorage())
@@ -90,6 +96,7 @@ function esOtros() {
 
 
 function esCarrito() {
+    leerModo()
     document.addEventListener('DOMContentLoaded', leerLocalStorageCompra())
     carritoCompra.addEventListener('click', e => eliminarProductoCompra(e))
     calcularTotal()
