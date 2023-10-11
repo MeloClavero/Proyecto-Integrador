@@ -14,6 +14,10 @@ body {
     flex-direction: column;
 }
 
+body.dark {
+    background-color: #212529;
+}
+
 /*! Navbar !! LISTO*/
 
 .navbar img {
@@ -47,14 +51,25 @@ body {
 }
 
 /* TAMAÑO DEL CARRITO */
+
 .bi-cart4 {
     font-size: 25px;
     margin-left: 25px;
     color: black;
 }
 
+body.dark .bi-cart4 {
+    font-size: 25px;
+    margin-left: 25px;
+    color: whitesmoke;
+}
+
 .bi-cart4:hover {
     color: maroon;
+}
+
+body.dark .bi-cart4:hover {
+    color: #EB6440;
 }
 
 /* TEXTO Y COLOR NAVBAR */
@@ -67,12 +82,32 @@ body {
     color: black;
 }
 
+body.dark .nav-link{
+    color: white;
+}
+
 .nav-link:hover {
+    color: #EB6440;
+}
+
+body.dark .nav-link:hover {
+    color: #EB6440
+}
+
+body.dark .nav-link.text-muted{
     color: #EB6440;
 }
 
 .container-fluid.nav {
     background-color: #c2bbbb54;
+}
+
+body.dark .container-fluid.nav {
+        background-color: #212529;
+}
+
+body.dark .navbar-toggler{
+    background-color: #aaa;
 }
 
 /* !Fin Navbar */
@@ -82,6 +117,11 @@ body {
 .footer {
     background-image: linear-gradient(to bottom, #f5f5f5d1 0%, #eb6540d5 300%);
     margin-top: auto;
+}
+
+body.dark .footer {
+    background-image:linear-gradient(to bottom, #212529 0%, #000000 300%); 
+    color: whitesmoke;
 }
 
 /* INPUT MAIL */
@@ -96,12 +136,23 @@ body {
     font-weight: 500;
 }
 
+body.dark .btn-outline-success.suscrip{
+    color:black;
+    background-color: #EB6440;
+    font-weight:500;
+}
+
 /*  LOGOS: TW,FB,IG */
 .bi-twitter,
 .bi-instagram,
 .bi-facebook {
     font-size: 22px;
     color: black;
+}
+
+body.dark .bi-twitter, body.dark .bi-instagram, body.dark .bi-facebook{
+    font-size: 22px;
+    color:white;
 }
 
 .bi-twitter:hover,
@@ -111,15 +162,31 @@ body {
     transition: 0.2s;
 }
 
+body.dark .bi-twitter:hover,
+body.dark .bi-instagram:hover,
+body.dark .bi-facebook:hover {
+    color: #EB6440;
+    transition: 0.2s;
+}
+
 /* DE LINKS */
 .border-navs {
     border-bottom: 1px solid #908d8d88;
+}
+
+body.dark .border-navs{
+    border-bottom: 1px solid #fffefed6;
 }
 
 /* linea baja */
 .border-n {
     border-top: 1px solid #908d8d88;
 }
+
+body.dark .border-n{
+    border-top: 1px solid #fffefed6;
+}
+
 
 /* ! Fin Footer */
 
@@ -173,6 +240,15 @@ body {
     /* inicio y fin lentos */
 }
 
+body.dark .lineas h2{
+    position: relative;
+    /* mueve las lineas con respecto al texto */
+    display: inline-block;
+    color: #EB6440;
+    transition: 0.1s ease-in-out;
+    /* inicio y fin lentos */
+}
+
 .lineas h2::after {
     content: '';
     /* es necesario para que se vea las lineas */
@@ -180,6 +256,19 @@ body {
     top: 50%;
     /* posicion de ubicacion de la linea */
     border-bottom: 3px solid #eb65403c;
+    width: 18em;
+    /* tamaño de la linea */
+    height: 3px;
+    right: -19em;
+}
+
+body.dark .lineas h2::after {
+    content: '';
+    /* es necesario para que se vea las lineas */
+    position: absolute;
+    top: 50%;
+    /* posicion de ubicacion de la linea */
+    border-bottom: 3px solid #EB6440;
     width: 18em;
     /* tamaño de la linea */
     height: 3px;
@@ -195,6 +284,20 @@ body {
     top: 50%;
     /* posicion de ubicacion de la linea */
     border-bottom: 3px solid #eb65403c;
+    width: 18em;
+    /* tamaño de la linea */
+    height: 3px;
+}
+
+body.dark .lineas h2::before {
+    left: -19em;
+    /* posicion linea */
+    content: '';
+    /* es necesario para que se vea las lineas */
+    position: absolute;
+    top: 50%;
+    /* posicion de ubicacion de la linea */
+    border-bottom: 3px solid #EB6440;
     width: 18em;
     /* tamaño de la linea */
     height: 3px;
@@ -271,6 +374,16 @@ body {
     font-weight: 500;
     text-shadow: 5px 5px 5px #aaa;
     color: gray;
+
+}
+
+body.dark .titulo-productos {
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 500;
+    text-shadow: 5px 5px 5px #aaa;
+    color: rgb(234, 234, 234);
 
 }
 
@@ -352,11 +465,20 @@ body {
     text-align: justify;
 }
 
+body.dark .productos p{
+    color:white
+}
+
 .productos strong {
     font-weight: 400;
     font-size: 38px;
     text-shadow: 5px 5px 5px #aaa;
-    ;
+    
+}
+
+body.dark .productos strong{
+    text-shadow: 5px 2px 6px #EB6440;
+    color: whitesmoke;
 }
 
 .productos img {
@@ -368,6 +490,10 @@ body {
     font-weight: 400;
     font-style: italic;
     font-size: 30px;
+}
+
+body.dark span:last-child{
+    color:gray;
 }
 
 .precios span:first-child {
@@ -411,23 +537,106 @@ body {
     font-weight: 500;
 }
 
+body.dark .mp {
+    border-right-color: #ffa2887c;
+    border-right-style: groove;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    font-size: 18px;
+    font-weight: 500;
+    color: whitesmoke;
+}
+
 /* ! nosotros */
 
+body.dark span.fw-semibold{
+    color: whitesmoke;
+}
+
+body.dark h5.fs-4.fw-bolder{
+    color: whitesmoke;
+}
+
+body.dark .envios p{
+    color: #aaa;
+}
 .nosotros {
     display: flex;
     align-items: center;
 }
 
-.nt{
-    position:relative;
-    display:inline-block;
+body.dark .nosotros p{
+    color: beige;
+}
+
+body.dark .nosotros h2:first-child{
+    color: beige
+}
+
+body.dark p.sp{
+    color: beige;
+}
+
+
+
+.nt {
+    position: relative;
+    display: inline-block;
     text-align: center;
     color: rgba(245, 245, 245, 0.625);
 }
 
-.centrado{
-    position:absolute;
-    top:50%;
+.centrado {
+    position: absolute;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+/* ! dark */
+
+.switch {
+    background: #343D5B;
+    border-radius: 1000px;
+    border: none;
+    position: relative;
+    cursor: pointer;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    outline: none;
+}
+
+.switch::after {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    background: #F1F1F1;
+    top: 0;
+    left: 0;
+    right: unset;
+    border-radius: 100px;
+
+}
+
+.switch.active {
+    background: orange;
+    color: #000;
+}
+
+.switch.active::after {
+    right: 0;
+    left: unset;
+}
+
+.switch span {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    display: block;
+    background: none;
+    color: #fff;
 }
